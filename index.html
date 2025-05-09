@@ -5,7 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit Converter App</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
+  <body>
+    <div
+      class="min-h-screen bg-gradient-to-br from-indigo-100 to-white flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-white shadow-2xl rounded-2xl p-6 md:p-10 w-full max-w-xl space-y-6"
+      >
+        <!-- Title -->
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-800 text-center">
+          🔄 Unit Converter
+        </h1>
+
+        <!-- Conversion Type -->
+        <div>
+          <label class="block text-gray-600 mb-1 font-medium"
+            >Choose Conversion Type</label
+          >
+          <select
+            id="conversionType"
+            class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400"
+          >
+            <option value="length">Length</option>
+            <option value="weight">Weight</option>
+            <option value="temperature">Temperature</option>
+          </select>
+        </div>
+
+        <!-- Input Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- From Unit -->
+          <div>
+            <label class="block text-gray-600 mb-1 font-medium">From</label>
+            <div class="flex items-center gap-2">
+              <input
+                type="number"
+                placeholder="Enter value"
+                id="inputValue"
+                class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400"
+              />
+              <select
+                id="fromUnit"
+                class="p-3 rounded-lg border border-gray-300"
+              >
+                <!-- Options populated dynamically -->
+              </select>
+            </div>
+          </div>
+
+          <!-- To Unit -->
+          <div>
+            <label class="block text-gray-600 mb-1 font-medium">To</label>
+            <div class="flex items-center gap-2">
+              <input
+                type="text"
+                id="outputValue"
+                readonly
+                class="w-full bg-gray-100 p-3 rounded-lg border border-gray-300"
+              />
+              <select id="toUnit" class="p-3 rounded-lg border border-gray-300">
+                <!-- Options populated dynamically -->
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Convert Button -->
+        <div class="text-center">
+          <button
+            id="convertBtn"
+            class="bg-indigo-500 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-600 transition-all duration-200"
+          >
+            Convert
+          </button>
+        </div>
+
+        <!-- Result -->
+        <div
+          id="result"
+          class="text-center text-lg font-semibold text-indigo-600"
+        >
+          <!-- Result will appear here -->
+        </div>
+      </div>
+    </div>
+  </body>
   <script src="script.js"></script>
 </html>
