@@ -86,13 +86,13 @@ convertBtn.addEventListener("click", () => { // On button click
 
 // Change unit options when conversion type changes
 conversionTypeSelect.addEventListener("change", () => {
-  populateUnits(conversionTypeSelect.value);
-  resultDisplay.textContent = "";
-  inputValue.value = "";
-  outputValue.value = "";
+  populateUnits(conversionTypeSelect.value); // Populate units based on selected type
+  resultDisplay.textContent = ""; // Clear result message
+  inputValue.value = "";  // Clear input value
+  outputValue.value = ""; // Clear output value
 });
 
 // Initialize on load
-window.addEventListener("DOMContentLoaded", () => {
-  populateUnits(conversionTypeSelect.value);
+window.addEventListener("DOMContentLoaded", () => { // On page load
+  populateUnits(conversionTypeSelect.value); // Populate units based on default selected type
 });
